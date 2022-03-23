@@ -4,7 +4,7 @@ classes: wide
 title: "[Spring 실습] JPA Cascade 영속성 전이"
 header:
   overlay_image: /img/spring-bg.jpg
-excerpt: 'Spring JPA 엔티티 연관관계에서 영속성 전이의 종류와 특징에 대해서 알아보자'
+excerpt: '특징에 대해서 알아보자'
 author: "window_for_sun"
 header-style: text
 categories :
