@@ -1,7 +1,7 @@
 --- 
 layout: single
 classes: wide
-title: "[Spring 실습] JPA Cascade 영속성 전이"
+title: "여행을 떠나요"
 header:
   overlay_image: /img/spring-bg.jpg
 excerpt: '특징에 대해서 알아보자'
@@ -9,15 +9,7 @@ author: "window_for_sun"
 header-style: text
 categories :
   - Spring
-tags:
-    - Practice
-    - Spring
-    - Spring Boot
-    - Spring JPA
-    - Hibernate
-    - ORM
-    - Cascade
-    - Orphan
+
 toc: true
 use_math: true
 ---  
