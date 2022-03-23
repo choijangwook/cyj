@@ -106,7 +106,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "window_for_sun"
+  name             : "CJW"
   avatar           : "/img/cs_make_avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Software Engineer"
   location         : "Seoul, Korea"
