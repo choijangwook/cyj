@@ -1,7 +1,0 @@
-## dd
-
-## sysbench
-
-## fallocate
-
-## sed
