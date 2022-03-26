@@ -106,11 +106,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "CYJ"
-  avatar           : "/img/cs_make_avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : # "CYJ"
+  avatar           : # "/img/cs_make_avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : # "Software Engineer"
   location         : # "Korea"
-  email            : "jangwookch@naver.com"
+  email            : # "jangwookch@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
