@@ -2,5 +2,6 @@
 <https://github.com/choijangwook/cyj/blob/master/exe/pys/dist/GuitarPro.exe>
 
 
+
 ---
-<a href="https://github.com/choijangwook/cyj/blob/master/exe/pys/dist/GuitarPro.exe">실행</a>
+<choijangwook://127.0.0.1:5900>
