@@ -7,6 +7,7 @@ header:
 excerpt: ' '
 author: "CYJ"
 header-style: text
+
 --- 
 
 **[홈페이지]**
@@ -14,8 +15,11 @@ header-style: text
 | :---: | :---: | :---: | :---: |
 | [ChoiYeoJoon 홈페이지](https://choijangwook.github.io/cyj/)  | [ChoiWanGue 홈페이지](https://choijangwook.github.io/cwg/)  | [모든것을 손가락으로](https://everythingfingers.modoo.at/)  | [AI를 사랑하는 개발자](https://aiworld.modoo.at/)  |
 | [사랑이 가득한가게 홈페이지](https://lovelyfoodstore.modoo.at/)  | [SciBooker 홈페이지](https://www.mixo.io/site/sci-booker-s6dtu/index.html)  | [ScienBooking](https://www.mixo.io/site/scien-booking-aze4q/index.html)  |     |
+
 ---
+
 **[유튜브]**
 | [준이세계따라잡기](https://www.youtube.com/channel/UCkWK9iWMkPx3CtUCsNVxHrA)  | [JoonToy TV](https://www.youtube.com/@joontoytv3724)  | [Wankyu Choi](https://www.youtube.com/@wankyuchoi597)  | [쮸꾸쮼스](https://www.youtube.com/@user-kw9uy6ff8e)  |
 | :---: | :---: | :---: | :---: |
+
 ---
