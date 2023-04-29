@@ -18,5 +18,4 @@ header-style: text
 **[유튜브]**
 | [준이세계따라잡기](https://www.youtube.com/channel/UCkWK9iWMkPx3CtUCsNVxHrA)  | [JoonToy TV](https://www.youtube.com/@joontoytv3724)  | [Wankyu Choi](https://www.youtube.com/@wankyuchoi597)  | [쮸꾸쮼스](https://www.youtube.com/@user-kw9uy6ff8e)  |
 | :---: | :---: | :---: | :---: |
-|     |     |     | 
 ---
