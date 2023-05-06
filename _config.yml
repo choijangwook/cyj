@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "CYJ"         # "Wios"
+title                    : "ChoiYeoJoon HomePage"         # "Wios"
 title_separator          : "-"
-name                     : "CYJ"         # "window_for_sun"
+name                     : "C Y J"         # "window_for_sun"
 description              : "This is my first site"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
