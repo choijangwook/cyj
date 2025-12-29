@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "ChoiYeoJoon HomePage"         # "Wios"
+title                    : "최장욱 홈페이지"         # "Wios"
 title_separator          : "-"
-name                     : "C Y J"         # "window_for_sun"
+name                     : "최장욱"         # "window_for_sun"
 description              : "This is my first site"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -107,10 +107,10 @@ analytics:
 # Site Author
 author:
   name             : # "CYJ"
-  avatar           : # "/img/cs_make_avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : # "/img/cs_make_avatar.png" # path 최장욱 of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : # "Software Engineer"
   location         : # "Korea"
-  email            : # "jangwookch@naver.com"
+  email            : # "jangwookcho@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
