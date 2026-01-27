@@ -6,4 +6,4 @@ toc: true
 ---  
 
 ## Link
-- [Beakjoon](https://www.acmicpc.net/user/ckdtjssml)
+-
