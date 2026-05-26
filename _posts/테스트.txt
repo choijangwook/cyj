@@ -1,0 +1,11 @@
+<button id="saveBtn">메모 저장하기</button>
+<p id="display"></p>
+
+<script>
+  // 저장 명령어
+  document.getElementById('saveBtn').onclick = () => {
+    const text = prompt("저장할 텍스트를 입력하세요:");
+    localStorage.setItem('myMemo.txt', text); // 로컬스토리지에 'myMemo.txt'라는 키로 저장
+    alert("브라우저에 저장되었습니다!");
+  };
+</script>
