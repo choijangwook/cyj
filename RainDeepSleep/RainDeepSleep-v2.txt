@@ -1,4 +1,5 @@
-AI 모듈 흐름도:
+모듈 흐름도: 
+AI 모듈: HTTP 7, HTTP 9, HTTP 10, HTTP 14,
 Dropbox 1(Watch) ➽ Dropbox 2(Download) ➽ HTTP 7 ➽ 
 Text parser 18(Match) ➽ Dropbox 20(Upload) ➽ 
 HTTP 9 (16:9 image URL) ➽ HTTP 10 (download) ➽ 
