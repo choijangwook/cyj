@@ -1,1 +1,573 @@
+Dropbox 1(Watch) ⇨ Dropbox 2(Download) ⇨ HTTP 7 ⇨  Text parser 18(Match) ⇨ Dropbox 20(Upload) ⇨  HTTP 9 (16:9 image URL) ⇨ HTTP 10 (download) ⇨ HTTP 14 (9:16 image URL + download) ⇨ Dropbox 12(Upload) ⇨ Dropbox 19(Upload)
 
+
+🗂️ Dropbox 전체 구조도
+/AI Multi Agent Healing Company
+│
+├── 🟦 01_TOPIC_INPUT
+│   ├── topic.txt
+│   ├── mood.txt
+│   ├── style.txt
+│   ├── (optional) duration.txt  
+│   ├── format.txt
+│   └── instruction.txt 
+│
+│
+├── 🧠 02_SCRIPT_OUTPUT
+│   ├── title.txt
+│   ├── narration.txt
+│   ├── description.txt
+│   ├── hashtags.txt (optional)
+│   └── video_prompt.txt
+│
+│
+├── 🎨 03_IMAGE_PROMPTS
+│   ├── prompt_16x9.txt
+│   ├── prompt_9x16.txt
+│   └── storyboard.txt (optional)
+│
+│
+├── 🖼 04_GENERATED_IMAGES
+│   ├── 16x9
+│   │   ├── img_001.png
+│   │   ├── img_002.png
+│   │   └── img_003.png
+│   │
+│   └── 9x16
+│       ├── img_001.png
+│       ├── img_002.png
+│       └── img_003.png
+│
+│
+├── 📦 05_PACKAGE
+│   ├── full_package.txt
+│   ├── production_notes.txt
+│   └── scene_breakdown.txt
+│
+│
+└── 🗄 99_ARCHIVE
+    ├── 2026_05
+    ├── 2026_06
+    └── old_runs
+
+🧑‍🧑‍🧒‍🧒Dropbox(Watch) 1
+▶Connection* My Dropbox connection (jangwookchoi1@gmail.com)
+
+▶Folder Search Method* Select from List
+
+▶Folder Path* /AI Multi Agent Healing Company/01_TOPIC_INPUT/
+
+▶Watch also subfolders
+   ⊙Yes  ○No
+
+▶Limit* 1
+
+
+
+🧑‍🧑‍🧒‍🧒Dropbox(Download) 2
+▶Connection* My Dropbox connection (jangwookchoi1@gmail.com)
+
+▶Way of selecting files* Map a file path
+
+▶File Path* 1. File ID  (쓰는게 아니고 찾아넣기)
+
+
+
+🧑‍🧑‍🧒‍🧒HTTP 7
+▶Authentication type* No authentication
+
+▶URL* 
+https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyAbLMsbK4x6sfn2NxVJtzUkvWwlhPBe4Jk
+
+▶Method* POST
+
+▶Headers
+  〉Hesder 1
+    〉Name* Content-Type
+    〉Value* application/json
+
+▶Query parameters*  꺼짐 Map
+
+▶Body content type* application/json
+
+▶Body input method* JSON string
+
+▶Body content* 
+{
+  "prompt": "You are an advanced cinematic image prompt generator.\n\nRULES:\n1. Output MUST be Korean language only.\n2. Do NOT use English.\n3. Do NOT repeat input text.\n4. Generate visually diverse scenes.\n\nCONTENT DIVERSITY RULE:\n- 16:9 = wide cinematic environment (landscape, architecture, nature, city, atmosphere)\n- 9:16 = vertical composition that rotates between human / object / environment / abstract\n- NEVER generate only humans\n- Always vary composition and subject\n\nSTYLE:\nCinematic, ultra detailed, soft lighting, realistic, film quality, high dynamic range\n\nOUTPUT FORMAT (STRICT JSON):\n{\n  \"prompt_16_9\": \"\",\n  \"prompt_9_16\": \"\",\n  \"style\": \"cinematic realistic\",\n  \"negative_prompt\": \"low quality, blurry, distorted, extra limbs, text, watermark\"\n}"
+}
+
+▶Parse response* 
+  ⊙Yes  ○No
+
+▶Pagination type* Select pagination type
+
+
+
+🧑‍🧑‍🧒‍🧒Text parser 18 
+
+▶Global match
+  ⊙Yes  ○No
+
+▶Case sensitive
+  ○Yes  ⊙No
+
+▶Multiline
+  ⊙Yes  ○No
+
+▶Singleline
+  ⊙Yes  ○No
+
+▶Continue the execution of the route even if the module finds no matches
+  ○Yes  ⊙No
+
+▶Pattern* PROMPT_16X9:\s*([\s\S]*?)PROMPT_9X16:
+
+▶Text*
+7. data.candidates[  ]:content.parts[  ]:text (쓰는게 아니고 찾아넣기)
+
+
+
+
+🧑‍🧑‍🧒‍🧒Dropbox(Download) 20
+▶Connection* My Dropbox connection (jangwookchoi1@gmail.com)
+
+▶Folder* /AI Multi Agent Healing Company/03_IMAGE_PROMPTS/
+
+▶File
+  ○Dropbox - Download a File
+  ⊙Map
+
+
+
+
+🧑‍🧑‍🧒‍🧒HTTP 9
+▶Authentication type* No authentication
+
+▶URL* 
+https://image.pollinations.ai/prompt/VERY WIDE CINEMATIC LANDSCAPE PANORAMIC AERIAL SHOT DRAMATIC LIGHTING ULTRA DETAILED {{18.Value}}?width=1920&height=1080&seed=1779668718
+
+▶Method* GET
+
+▶Headers
+  〉Hesder 1
+    〉Name* http9_image_16x9
+    〉Value* 
+
+▶Query parameters*  꺼짐 Map
+
+▶Body content type* Seclect bidy content type
+
+▶Parse response
+  ⊙Yes  ○No
+
+▶Pagination type
+  Seclect pagination type
+
+
+
+🧑‍🧑‍🧒‍🧒HTTP 10
+▶Authentication type* No authentication
+
+▶URL* 
+https://image.pollinations.ai/prompt/{{Text}}{{parser}}18{{→}}{{Value}} (쓰는게 아니고 찾아넣기)
+
+
+▶Method* GET
+
+▶Headers
+  〉Hesder 1
+    〉Name* HTTP10_DOWNLOAD_IMAGE
+    〉Value* 
+
+▶Query parameters*  꺼짐 Map
+
+▶Body content type* Seclect bidy content type
+
+▶Parse response
+  ⊙Yes  ○No
+
+▶Pagination type
+  Seclect pagination type
+
+
+
+🧑‍🧑‍🧒‍🧒HTTP 14
+▶Authentication type* No authentication
+
+▶URL* 
+https://image.pollinations.ai/prompt/VERTICAL CINEMATIC PORTRAIT MOBILE SHORTS DRAMATIC LIGHTING ULTRA DETAILED{{18.Value}}?width=1080&height=1920&seed=1779668717 (쓰는게 아니고 찾아넣기)
+
+
+▶Method* GET
+
+▶Headers
+  〉Hesder 1
+    〉Name* HTTP14_9X16_URL
+    〉Value* 
+
+▶Query parameters*  꺼짐 Map
+
+▶Body content type* Seclect bidy content type
+
+▶Parse response
+  ⊙Yes  ○No
+
+▶Pagination type
+  Seclect pagination type
+
+
+
+🧑‍🧑‍🧒‍🧒Dropbox(Upload) 12
+▶Connection* My Dropbox connection (jangwookchoi1@gmail.com)
+
+▶Folder* /AI Multi Agent Healing Company/04_GENARATED_IMAGES/16x9/
+
+▶File* Map
+ 
+▶File Name* img_16x9_{{timestamp}}.png   (쓰는게 아니고 찾아넣기)
+
+
+▶Data* {{10.data}}   (쓰는게 아니고 찾아넣기)
+
+
+
+🧑‍🧑‍🧒‍🧒Dropbox(Upload) 19
+▶Connection* My Dropbox connection (jangwookchoi1@gmail.com)
+
+▶Folder* /AI Multi Agent Healing Company/04_GENARATED_IMAGES/9x16/
+
+▶File* Map
+ 
+▶File Name* img_9x16_{{timestamp}}.png   (쓰는게 아니고 찾아넣기)
+
+
+▶Data* {{14.data}}   (쓰는게 아니고 찾아넣기)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🧠 폴더별 역할 설명
+🟦 01_TOPIC_INPUT (입력 구역)
+👉 사람이 직접 건드리는 유일한 영역
+
+
+01_TOPIC_INPUT (입력 구역)
+👉 사람이 직접 건드리는 유일한 영역
+여기에 주제 넣으면 자동 실행
+역할
+콘텐츠 방향 결정
+감정 톤 설정
+스타일 설정
+
+파일	역할
+topic.txt	주제
+mood.txt	감정
+style.txt	시각 스타일
+duration.txt	영상 길이
+format.txt	콘텐츠 타입
+instruction.txt	AI 행동 규칙
+
+02_SCRIPT_OUTPUT (Gemini 텍스트 결과)
+👉 AI가 만든 “영상 설계도”
+영상의 뼈대 (대본 + 제목 + 설명)
+
+03_IMAGE_PROMPTS
+👉 이미지 생성 설계도
+Gemini 이미지용 프롬프트 저장소
+
+04_GENERATED_IMAGES
+👉 실제 결과물 (핵심)
+영상 제작 재료 (이미지)
+특징
+16:9 → 유튜브 본편용
+9:16 → Shorts / Reels용
+
+05_PACKAGE (최종 조립본)
+👉 영상 제작용 완성 패키지
+이 폴더 하나만 보면 영상 만들 수 있음
+
+99_ARCHIVE (히스토리)
+👉 과거 콘텐츠 저장
+- 주제별 백업
+- 실패한 생성 결과
+- 버전 관리
+
+
+
+Dropbox 1 Watch ➡ Dropbox 2 down ➡ Dropbox 5 search ➡ Dropbox 6 down 까지 완료됐어. 지금 부터 모듈 1개씩만 어디에 설정하는지 상세하게 진행해줘.
+
+
+AI Multi Agent Healing Company/01_TOPIC_INPUT
+Way of selecting files*
+
+Way of selecting files*
+File*
+Map
+Invalid file
+
+[Dropbox 01_TOPIC_INPUT (Watch)]
+            ↓
+[Dropbox Download (topic/mood/style)]
+            ↓
+[HTTP 1 - Gemini SCRIPT 생성]
+            ↓
+[Dropbox 02_SCRIPT_OUTPUT 저장]
+            ↓
+[HTTP 2 - Gemini IMAGE PROMPT 생성]
+            ↓
+[Dropbox 03_IMAGE_PROMPTS 저장]
+            ↓
+[HTTP 3 - Pollinations 이미지 URL 생성]
+            ↓
+[HTTP 4 - Image Download (binary)]
+            ↓
+[Dropbox 04_GENERATED_IMAGES 저장]
+            ↓
+[HTTP 5 - (optional) Package merge]
+            ↓
+[Dropbox 05_PACKAGE 저장]
+
+
+
+
+HTTP22
+▶Authentication type* No authentication
+
+▶URL* 
+https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyAbLMsbK4x6sfn2NxVJtzUkvWwlhPBe4Jk
+
+▶Method* POST
+
+▶Headers
+  〉Hesder 1
+    〉Name* Content-Type
+    〉Value* application/json
+
+▶Query parameters*  꺼짐 Map
+
+▶Body content type* application/json
+
+▶Body input method* JSON string
+
+▶Body content* 
+{
+  "contents": [
+    {
+      "parts": [
+        {
+          "text": "{{2.data.candidates[0].content.parts[0].text}}"
+        }
+      ]
+    }
+  ]
+}
+
+▶Parse response* 
+  ⊙Yes  ○No
+
+▶Pagination type* Select pagination type
+
+
+
+
+
+
+Dropbox(Upload)9
+▶Connection* My Dropbox connection (jangwookchoi1@gmail.com)
+
+▶Folder* /AI Multi Agent Healing Company/OUTPUT
+
+▶File* Map
+ 
+▶File Name* result_1.name
+
+▶Data* 19. Data.candidatest[   ]: content.parts[  ]: text
+즉 아래와 같음.
+Data
+ └ candidates
+     └ 1
+         └ content
+             └ parts
+                 └ 1
+                     └ text
+
+
+이렇게 나오는데 맞아?
+File
+  ○ Dropbox - Download a File
+  ○ Dropbox - Download a File
+  ⊙ Map
+
+File Name*  img_16x9_{{timestamp}}.png
+
+Data* 
+
+
+
+아래의 Dropbox 12(Upload)에서 File Name* Data* 에서 잘 모르겠어. 입력할 내용 정확히 알려줘.
+
+Dropbox 1(Watch) ⇨ Dropbox 2(Download) ⇨ Dropbox 5(Search Files/Folder) ⇨ Dropbox 6(Download)  ⇨ HTTP 7 ⇨ HTTP 9 ⇨ HTTP 10 ⇨ HTTP 11 ⇨ Dropbox 12(Upload)
+
+
+/AI Multi Agent Healing Company/04_GENERATED_IMAGES/sample/sample.png
+
+
+
+
+
+Dropbox 1(Watch) ⇨ Dropbox 2(Download) ⇨ Dropbox 5(Search Files/Folder) ⇨ Dropbox 6(Download)  ⇨ HTTP 7 ⇨ HTTP 9 ⇨ HTTP 10 ⇨ HTTP 14 ⇨ Dropbox 12(Upload)
+
+
+
+
+Dropbox 1(Watch) ⇨ Dropbox 2(Download) ⇨ Dropbox 5(Search Files/Folder) ⇨ Dropbox 6(Download)  ⇨ HTTP 7 ⇨ HTTP 9 ⇨ HTTP 10 ⇨ HTTP 14 ⇨ Dropbox 12(Upload) 
+
+
+
+
+에서 지금 문제인 모듈이  HTTP 14 야. HTTP 14 여기 수정하는거 맞지?
+
+
+여기에 써 넣을 내용 알려줘. Description 여기와, Type* 여기, Default value 여기, Required 여기, Multi-line 여기도.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Body structure* 들어가서, 
+Specification*
+   gemini_request
+   Name* gemini_request
+   Description 에 이걸 넣었음 'AI가 사용할 이미지 생성용 프롬프트 텍스트'
+   Type* Text 
+   Default value는 공백으로 두었음
+Strict : No
+내가 뭘 잘못 작성하였나?
+
+
+
+미안한데 다시한번 더 종합 정리해줘. 우선 HTTP 14 뒤에 모듈 설치 하는것만, 적는 내용 상세히 파일명과 함께 다시한번 더 부탁해. 이것 끝나야 다음 단계 진행할께. 
+
+
+dropbox에 입력문서에 내가 주제를 입력하고, 생성된 이미지와 프롬프트를 내가 dropbox 출력에 들어가서 복사해서 내 컴퓨터에서 내가 동영상 제작용으로 사용할거야. 잘 만들어졌으면 내가 직접 유튜브에 올릴거야. 그래서 내가 입력한 내용으로 품질 좋은 이미지와 프롬프트가 나와야 해. 그런데 지금 이미징와 프롬프트가 안나와. 해결해줘.
+
+
+Tools   Base64  Decode a string
+
+
+Tools
+Get multiple variables
+Get values of a previously stored variables.
+Tools
+Get variable
+Get the value of a previously stored variable.
+Tools
+Increment function
+Returns a value of 1 after first run. Every subsequent run will increment the returned value by 1.
+Tools
+Set multiple variables
+Sets the value of multiple variables.
+Tools
+Set variable
+Sets the value of the variable.
+Tools
+Sleep
+Delays execution for a specified period of time.
+aggregators
+Tools
+Numeric aggregator
+Applies the aggregate function to selected rows.
+Tools
+Table aggregator
+Aggregates selected values into a table.
+Tools
+Text aggregator
+Aggregates multiple strings into one text.
+transformers
+Tools
+Compose a string
+Composes a string for easier mapping of scenarios.
+Tools
+Convert the encoding of a text
+Converts a text from one codepage to another.
+Tools
+Switch
+Switches the output based on the input.
+
+
+
+
+Dropbox 1(Watch) ⇨ Dropbox 2(Download) ⇨ HTTP 7 ⇨  Text parser 18(Match) ⇨ HTTP 9 (16:9 image URL) ⇨ HTTP 10 (download) ⇨ HTTP 14 (9:16 image URL + download) ⇨ Dropbox 12(Upload) ⇨ Dropbox 19(Upload)
+
+
+여기 정말 어렵다. Pattern* 누르면 Dropbox 1(Watch), Dropbox 2(Download), HTTP 7 중에서 어떤걸 골라야 하는지 알려줘.
+
+
+PROMPT_16X9:\s*([\s\S]*?)PROMPT_9X16:
+PROMPT_9X16:\s*([\s\S]*?)STORYBOARD:
+STORYBOARD:\s*([\s\S]*)
+
+
+Folder*는, File은, File Name*은,  Data*는,
+
+Folder*와 File과 Data*는 1개씩인데 어떻게 16:9 저장, 9:16 저장 을 따로 넣을수 있나?
+
+
+
+Dropbox 1(Watch) ⇨ Dropbox 2(Download) ⇨ HTTP 7 ⇨  Text parser 18(Match) ⇨ Dropbox 20(Upload) ⇨  HTTP 9 (16:9 image URL) ⇨ HTTP 10 (download) ⇨ HTTP 14 (9:16 image URL + download) ⇨ Dropbox 12(Upload) ⇨ Dropbox 19(Upload)
+
+
+정확한 수정 위치
+📌 HTTP 9 열기
+
+👉 Scenario에서 “HTTP 9 클릭”
+
+수정:
+
+URL = https://image.pollinations.ai/prompt/{{PROMPT_16X9}}?width=1280&height=720
+📌 HTTP 14 열기
+
+👉 Scenario에서 “HTTP 14 클릭”
+
+수정:
+
+URL = https://image.pollinations.ai/prompt/{{PROMPT_9X16}}?width=720&height=1280
+
+
+HTTP 9
+https://image.pollinations.ai/prompt/{{Text}}{{parser}}{{→}}{{Value}}
+
+
+HTTP 14
+https://image.pollinations.ai/prompt/{{PROMPT_9X16}}
+
+
+현재 구조도는 다음과 같다. 문제는 (1) 프롬프트 출력은 매번 다르게 나오지만 영어 임. 한글은 안되는가? (2) 9x16 size는 제대로 나오고, 매번 다른게 나오지만 인물만 나옴. (3) 16x9 는 size가 매번 768x768 만 나오고 관계없는 한가지만 나옴. 다음은 구조도 임.
+Dropbox 1(Watch) ⇨ Dropbox 2(Download) ⇨ HTTP 7 ⇨  Text parser 18(Match) ⇨ Dropbox 20(Upload) ⇨  HTTP 9 (16:9 image URL) ⇨ HTTP 10 (download) ⇨ HTTP 14 (9:16 image URL + download) ⇨ Dropbox 12(Upload) ⇨ Dropbox 19(Upload)
+
+
+<img src="https://raw.githubusercontent.com/choijangwook/cyj/master/img/RainDeepSleep%20AI%20Healing%20Company.png" alt="RainDeepSleep" style="margin-bottom: -20px; display: block;">
