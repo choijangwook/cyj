@@ -1,90 +1,10 @@
-<button id="saveBtn">메모 저장하기</button>
-<p id="display"></p>
-
-<script>
-  // 저장 명령어
-  document.getElementById('saveBtn').onclick = () => {
-    const text = prompt("저장할 텍스트를 입력하세요:");
-    localStorage.setItem('myMemo.txt', text); // 로컬스토리지에 'myMemo.txt'라는 키로 저장
-    alert("브라우저에 저장되었습니다!");
-  };
-</script>
-
-
-
-
-
-
-https://choijangwook.github.io/cyj/
-
-https://choijangwook.github.io/cyj/%EB%82%B4%EC%9D%B8%ED%84%B0%EB%84%B7/
-
-
-그리고 index.html 안에 버튼/링크를 이렇게 넣어:
-
-<a href="/test/test.txt" target="_blank">test이미지</a>
-
-만약 GitHub Pages 주소가:
-
-https://username.github.io/myrepo/
-
-라면 더 안전하게는 이렇게 추천:
-
-
-
-<a href="test/test.txt" target="_blank">test이미지</a>
-
-
-(/ 맨 앞 제거)
-
-이제 test.txt 안에는 그냥 일반 텍스트 넣으면 돼.
-
-예시:
-
 테스트 출력입니다.
 
 이미지 URL:
 https://example.com/image.png
 
 프롬프트:
-cinematic ultra detailed healing room, soft light
-
-실행하면 브라우저 새창에서:
-
-메모장처럼 흰 배경 + 검은 글씨
-
-형태로 열림.
-
-즉:
-
-HTML 페이지 아님
-디자인 없음
-순수 텍스트만 표시
-복붙 쉬움
-
-상태가 돼.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+cinematic ultra detailed healing room, soft light, 16:9
 
 
 
