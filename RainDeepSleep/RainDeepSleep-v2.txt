@@ -327,7 +327,7 @@ content.parts[0].text}}"
 ▶File Name* result_1.name
 ▶Data* 19. Data.candidatest[   ]: 
 content.parts[  ]: text
-즉 아래와 같음.
+
 Data
  └ candidates
      └ 1
@@ -337,7 +337,7 @@ Data
                      └ text
 
 (문제1) 9x16는 다른게 나오고 인물만 나옴
-  -> 모듈 최적화 대기
+  -> 모듈 최적화
 (문제2) 16x9는 768x768이고, 관계없는 한가지만 나옴
-  -> 모듈 최적화 대기
+  -> 모듈 최적화
 
