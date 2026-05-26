@@ -146,9 +146,7 @@ Gemini 이미지용 프롬프트 저장소
 ▶Authentication type* 
   No authentication
 ▶URL* 
-https://generativelanguage.googleapis.com/
-v1beta/models/gemini-2.5-flash:generateContent?
-key=AIzaSyAbLMsbK4x6sfn2NxVJtzUkvWwlhPBe4Jk
+https://...............................
 ▶Method* POST
 ▶Headers
   〉Hesder 1
@@ -292,9 +290,7 @@ height=1920&seed=1779668717 (쓰는게 아니고 찾아넣기)
 🧑‍🧑‍🧒‍🧒HTTP22
 ▶Authentication type* No authentication
 ▶URL* 
-https://generativelanguage.googleapis.com/v1beta/
-models/gemini-2.5-flash:generateContent?key=
-AIzaSyAbLMsbK4x6sfn2NxVJtzUkvWwlhPBe4Jk
+https://...................................
 ▶Method* POST
 ▶Headers
   〉Hesder 1
@@ -339,9 +335,8 @@ Data
                  └ 1
                      └ text
 
-
-
 (문제1) 프롬프트 출력은 매번 다르게 나옴
 (문제2) 영어만 되고 한글 안됨
-(문제3) 9x16는 매번 다른게 나오고 인물만 나옴
-(문제4) 16x9는 매번 768x768이고, 관계없는 한가지만 나옴
+(문제3) 9x16는 다른게 나오고 인물만 나옴
+(문제4) 16x9는 768x768이고, 관계없는 한가지만 나옴
+
