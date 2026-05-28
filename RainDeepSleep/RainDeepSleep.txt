@@ -84,16 +84,15 @@ Generation → Evaluation → Production → Delivery → Analytics → Learning
 
 
 Make 시나리오용 모듈 매핑
-| 단계           | Module Type                | Input/Output                                                                       | Dropbox 폴더      |
-| -------------- | -------------------------- | ---------------------------------------------------------------------------------- | ----------------- |
-| 01_Command     | HTTP / Manual upload       | order.txt                                                                          | `/01_Command`     |
-| 02_Creator_AI  | HTTP (OpenAI)              | ideas.json, title.txt, script.txt, prompt.txt                                      | `/02_Creator_AI`  |
-| 03_Evaluation  | HTTP (OpenAI / Rule check) | approval.json, rejected.txt, approved.txt                                          | `/03_Evaluation`  |
-| 04_Render      | Render / Video Processor   | render_001.mp4, render_002.mp4                                                     | `/04_Render`      |
-| 05_Delivery    | File Processor             | upload_ready.mp4, title.txt, description.txt, metadata.json                        | `/05_Delivery`    |
-| 06_Analytics   | HTTP / Data Collector      | ctr_history.csv, retention_history.csv, youtube_stats.json, performance_report.txt | `/06_Analytics`   |
-| 07_Learning_AI | HTTP (OpenAI)              | improvement_strategy.txt, next_prompt_update.txt, creator_feedback.json            | `/07_Learning_AI` 
-|
+| 단계          | Module Type             | Input/Output                                                           | Dropbox 폴더   |
+| ------------- | ----------------------- | ---------------------------------------------------------------------- | -------------- |
+| 01_Command    | HTTP / Manual upload    | order.txt                                                              | /01_Command    |
+| 02_Creator_AI | HTTP (OpenAI)           | ideas.json, title.txt, script.txt, prompt.txt                          | /02_Creator_AI |
+| 03_Evaluation | HTTP (OpenAI/Rule check)| approval.json, rejected.txt, approved.txt                              | /03_Evaluation |
+| 04_Render     | Render / Video Processor| render_001.mp4, render_002.mp4                                         | /04_Render     |
+| 05_Delivery   | File Processor          | upload_ready.mp4, title.txt, description.txt, metadata.json            | /05_Delivery   |
+| 06_Analytics  | HTTP / Data Collector   | ctr_history.csv, retention_history.csv, youtube_performance_report.txt | /06_Analytics  |
+| 07_Learning_AI| HTTP (OpenAI)           | improvement_strategy.txt, next_prompt_update.txt, creator_feedback.json| /07_Learning_AI|
 
 
 
