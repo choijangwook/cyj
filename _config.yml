@@ -98,9 +98,9 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google-universal" # false (default), "google", "google-universal", "custom"
+  provider               : false # "google-universal"에서 false로 변경
   google:
-    tracking_id          : "UA-135514399-1"
+    tracking_id          : "" # 값을 비워줍니다.
     anonymize_ip         : # true, false (default)
 
 
